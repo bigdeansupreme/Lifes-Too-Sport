@@ -8,6 +8,7 @@ MODELS & ASSOCIATIONS
 
     User
 has_many :favorites
+
 has_many :teams, through: :favorites
 
 
@@ -16,16 +17,20 @@ has_many :teams
 
     Team
 has_many :favorites
+
 has_many :users, through: :favorites
+
 has_many :players
+
 belongs_to :sport
 
-    <!-- Player
-belongs_to :team -->
+     Player
+belongs_to :team
 
 
     Favorite
 belongs_to :user
+
 belongs_to :team
 
     USER STORIES
@@ -42,7 +47,7 @@ stretch goals:
 
 
 
-    <!-- Post
+    Post
 belongs_to :user
 belongs_to :forum
 
@@ -50,13 +55,17 @@ belongs_to :forum
 belongs_to :team
 belongs_to :player
 has_many :posts
-has_many :users, through: :posts -->
+has_many :users, through: :posts
 
 
 
 
 
     Weekend Plan
+
+Build out the functionality between Sports, teams, players. Work on the show pages for teams & players
+
+
 More Labs!
 Build out models, controllers, routes
 Establish some view pages
