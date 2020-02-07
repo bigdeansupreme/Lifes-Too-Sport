@@ -9,9 +9,6 @@ MODELS & ASSOCIATIONS
     User
 has_many :favorites
 has_many :teams, through: :favorites
-has_many :players, through: :teams/favorites???
-has_many :posts
-has_many :forums, through: :posts
 
 
     Sport
@@ -21,15 +18,27 @@ has_many :teams
 has_many :favorites
 has_many :users, through: :favorites
 has_many :players
-has_many :forums
-has_many :posts, through: :forums
 belongs_to :sport
 
     <!-- Player
 belongs_to :team -->
+
+
     Favorite
 belongs_to :user
 belongs_to :team
+
+    USER STORIES
+create account
+add favorite teams/players to profile
+edit/update/remove those teams/players
+delete account
+like posts and comments
+
+
+
+
+stretch goals:
 
 
 
@@ -46,12 +55,6 @@ has_many :users, through: :posts -->
 
 
 
-    USER STORIES
-create account
-add favorite teams/players to profile
-edit/update/remove those teams/players
-delete account
-like posts and comments
 
     Weekend Plan
 More Labs!
@@ -67,9 +70,6 @@ Focus on show pages for team & players before user experience
 
 
 
-
-
-Stretch goals:
 
 
 <!-- post on forums
