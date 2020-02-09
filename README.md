@@ -6,27 +6,34 @@ LIFE'S TOO SPORT
 
 MODELS & ASSOCIATIONS
 
-    User
-has_many :favorites
-
-has_many :teams, through: :favorites
 
 
     Sport
-has_many :teams
-
-    Team
-has_many :favorites
-
-has_many :users, through: :favorites
-
 has_many :players
 
-belongs_to :sport
+has_many :teams, through: :players
 
      Player
 belongs_to :team
 
+belongs_to :sport
+
+    Team
+
+has_many :players
+
+has_many :sports, through: :players
+
+
+
+----
+
+*inserting models later
+
+    User
+has_many :favorites
+
+has_many :teams, through: :favorites
 
     Favorite
 belongs_to :user

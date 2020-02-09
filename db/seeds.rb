@@ -8,11 +8,21 @@
 require 'rest-client'
 require 'json'
 
-url = "https://statsapi.web.nhl.com/api/v1/teams"
-res = RestClient.get(url)
-data = JSON.parse(res)
-puts(data)
+# url = "https://statsapi.web.nhl.com/api/v1/teams"
+# res = RestClient.get(url)
+# data = JSON.parse(res)
+# puts(data)
 
-data['teams'].each do |team|
-    Test.create(name: team['name'])
+url = "https://www.thesportsdb.com/api/v1/json/1/all_sports.php"
+res = RestClient.get(url)
+data_sport = JSON.parse(res)
+puts(data_sport)
+
+data_sport["sports"].each do |sport|
+    Sport.create(name: sport['name'])
 end
+
+
+# data['teams'].each do |team|
+#     Test.create(name: team['name'])
+# end
