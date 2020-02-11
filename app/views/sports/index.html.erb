@@ -1,7 +1,7 @@
 <h1>SPORTS</h1>
 
 <ul>
-<% @sports.each do |sport| %>
+<% @sports.uniq.each do |sport| %>
 <li><%= link_to sport.name, sport_path(sport) %></li>
 <% end %>
 </ul>
