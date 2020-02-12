@@ -4,21 +4,6 @@
 <h3>Bio:</h3>
 <p><%= @user.bio %></p>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<%= button_to 'logout', logout_path, action: 'delete' %>
+<%= button_to('edit profile', edit_user_path(@user), method: :get) %><br>
+<%= button_to 'homepage', '/', method: :get %><br>
+<%= button_to 'logout', logout_path, action: 'delete' %><br>
