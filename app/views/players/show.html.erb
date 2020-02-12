@@ -9,12 +9,37 @@
 
 
 <h3>Career Stat Averages:</h3>
-    <ul>
-        <li>Points per game: <%= @player.ppg.round(2) %></li><br>
-        <li>Assists per game: <%= @player.apg.round(2) %></li><br>
-        <li>Rebounds per game: <%= @player.rpg.round(2) %></li><br>
-        <li>Steals per game: <%= @player.spg.round(2) %></li><br>
-        <li>Turnovers per game: <%= @player.tpg.round(2) %></li><br>
-        <li>Fouls per game: <%= @player.fpg.round(2) %></li><br>
-        <li>Minutes per game: <%= @player.mpg.round(2) %></li><br>    
-    </ul>
+
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+}
+th {
+  text-align: left;
+}
+</style>
+
+    <table style="width:80%">
+        <tr>
+            <th>Points per game</th>
+            <th>Assists per game</th>
+            <th>Rebounds per game</th>
+            <th>Steals per game</th>
+            <th>Turnovers per game</th>
+            <th>Fouls per game</th>
+            <th>Minutes per game</th>
+        </tr>
+        <tr>
+            <td><%= @player.ppg.round(2) %></td>
+            <td><%= @player.apg.round(2) %></td>
+            <td><%= @player.rpg.round(2) %></td>
+            <td><%= @player.spg.round(2) %></td>
+            <td><%= @player.tpg.round(2) %></td>
+            <td><%= @player.fpg.round(2) %></td>
+            <td><%= @player.mpg.round(2) %></td>
+            </tr>    
+    </table>
