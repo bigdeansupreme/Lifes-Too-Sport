@@ -17,6 +17,17 @@ ActiveRecord::Schema.define(version: 2020_02_10_193029) do
     t.string "last_name"
     t.string "position"
     t.integer "weight_pounds"
+    t.integer "jersey_number"
+    t.integer "years_pro"
+    t.string "nationality"
+    t.string "university"
+    t.float "ppg"
+    t.float "apg"
+    t.float "rpg"
+    t.float "spg"
+    t.float "tpg"
+    t.float "fpg"
+    t.float "mpg"
     t.integer "team_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -42,7 +53,9 @@ ActiveRecord::Schema.define(version: 2020_02_10_193029) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "user_name"
-    t.string "password"
+    t.string "bio"
+    t.string "profile_pic"
+    t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

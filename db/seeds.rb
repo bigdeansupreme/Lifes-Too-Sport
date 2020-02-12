@@ -9,8 +9,11 @@ require 'net/http'
 require 'net/https'
 require 'rest-client'
 require 'json'
+require 'faker'
 
 nba = Sport.create(name: 'NBA')
+nfl = Sport.create(name: 'NFL')
+mlb = Sport.create(name: 'MLB')
 
 
 url_2 = "https://www.balldontlie.io/api/v1/teams"
@@ -23,81 +26,116 @@ url = "https://www.balldontlie.io/api/v1/players"
 response = RestClient.get(url)
 player_data = JSON.parse(response)
 # puts(player_data)
-player_data['data'].each { |player| Player.create(team_id: Team.all.sample.id, first_name: player['first_name'], last_name: player['last_name'], position: player['position'], weight_pounds: player['weight_pounds'])}
+player_data['data'].each { |player| Player.create(ppg: rand(1.0..35.0), apg: rand(1.0..13.0), rpg: rand(1.0..14.0), spg: rand(0.5..3.0), tpg: rand(0.5..4.5), fpg: rand(1.0..5.5), mpg: rand(5.0..42.0), jersey_number: rand(1..50), years_pro: rand(1..19), nationality: Faker::Nation.nationality, team_id: Team.all.sample.id, university: Faker::University.name, first_name: player['first_name'], last_name: player['last_name'], position: player['position'], weight_pounds: rand(175..290))}
 # byebug
 
-i = 1 
+i = 2 
 
 5.times do 
     url = "https://www.balldontlie.io/api/v1/players/?page=#{i}"
     response = RestClient.get(url)
     player_data = JSON.parse(response)
     # puts(player_data)
-    player_data['data'].each { |player| Player.create(team_id: Team.all.sample.id, first_name: player['first_name'], last_name: player['last_name'], position: player['position'], weight_pounds: player['weight_pounds'])}
+    player_data['data'].each { |player| Player.create(ppg: rand(1.0..35.0), apg: rand(1.0..13.0), rpg: rand(1.0..14.0), spg: rand(0.5..3.0), tpg: rand(0.5..4.5), fpg: rand(1.0..5.5), mpg: rand(5.0..42.0), jersey_number: rand(1..50), years_pro: rand(1..19), nationality: Faker::Nation.nationality, team_id: Team.all.sample.id, university: Faker::University.name, first_name: player['first_name'], last_name: player['last_name'], position: player['position'], weight_pounds: rand(175..290))}
     i = i + 1
 end
 
-i = 6
+i = 7
 
 5.times do 
     url = "https://www.balldontlie.io/api/v1/players/?page=#{i}"
     response = RestClient.get(url)
     player_data = JSON.parse(response)
     # puts(player_data)
-    player_data['data'].each { |player| Player.create(team_id: Team.all.sample.id, first_name: player['first_name'], last_name: player['last_name'], position: player['position'], weight_pounds: player['weight_pounds'])}
+    player_data['data'].each { |player| Player.create(ppg: rand(1.0..35.0), apg: rand(1.0..13.0), rpg: rand(1.0..14.0), spg: rand(0.5..3.0), tpg: rand(0.5..4.5), fpg: rand(1.0..5.5), mpg: rand(5.0..42.0), jersey_number: rand(1..50), years_pro: rand(1..19), nationality: Faker::Nation.nationality, team_id: Team.all.sample.id, university: Faker::University.name, first_name: player['first_name'], last_name: player['last_name'], position: player['position'], weight_pounds: rand(175..290))}
     i = i + 1
 end
 
-i = 11
+i = 12
 5.times do 
     url = "https://www.balldontlie.io/api/v1/players/?page=#{i}"
     response = RestClient.get(url)
     player_data = JSON.parse(response)
     # puts(player_data)
-    player_data['data'].each { |player| Player.create(team_id: Team.all.sample.id, first_name: player['first_name'], last_name: player['last_name'], position: player['position'], weight_pounds: player['weight_pounds'])}
+    player_data['data'].each { |player| Player.create(ppg: rand(1.0..35.0), apg: rand(1.0..13.0), rpg: rand(1.0..14.0), spg: rand(0.5..3.0), tpg: rand(0.5..4.5), fpg: rand(1.0..5.5), mpg: rand(5.0..42.0), jersey_number: rand(1..50), years_pro: rand(1..19), nationality: Faker::Nation.nationality, team_id: Team.all.sample.id, university: Faker::University.name, first_name: player['first_name'], last_name: player['last_name'], position: player['position'], weight_pounds: rand(175..290))}
     i = i + 1
 end
 
-i =16
+i =17
 5.times do 
     url = "https://www.balldontlie.io/api/v1/players/?page=#{i}"
     response = RestClient.get(url)
     player_data = JSON.parse(response)
     # puts(player_data)
-    player_data['data'].each { |player| Player.create(team_id: Team.all.sample.id, first_name: player['first_name'], last_name: player['last_name'], position: player['position'], weight_pounds: player['weight_pounds'])}
+    player_data['data'].each { |player| Player.create(ppg: rand(1.0..35.0), apg: rand(1.0..13.0), rpg: rand(1.0..14.0), spg: rand(0.5..3.0), tpg: rand(0.5..4.5), fpg: rand(1.0..5.5), mpg: rand(5.0..42.0), jersey_number: rand(1..50), years_pro: rand(1..19), nationality: Faker::Nation.nationality, team_id: Team.all.sample.id, university: Faker::University.name, first_name: player['first_name'], last_name: player['last_name'], position: player['position'], weight_pounds: rand(175..290))}
     i = i + 1
 end
 
-i = 21
+i = 22
 5.times do 
     url = "https://www.balldontlie.io/api/v1/players/?page=#{i}"
     response = RestClient.get(url)
     player_data = JSON.parse(response)
     # puts(player_data)
-    player_data['data'].each { |player| Player.create(team_id: Team.all.sample.id, first_name: player['first_name'], last_name: player['last_name'], position: player['position'], weight_pounds: player['weight_pounds'])}
+    player_data['data'].each { |player| Player.create(ppg: rand(1.0..35.0), apg: rand(1.0..13.0), rpg: rand(1.0..14.0), spg: rand(0.5..3.0), tpg: rand(0.5..4.5), fpg: rand(1.0..5.5), mpg: rand(5.0..42.0), jersey_number: rand(1..50), years_pro: rand(1..19), nationality: Faker::Nation.nationality, team_id: Team.all.sample.id, university: Faker::University.name, first_name: player['first_name'], last_name: player['last_name'], position: player['position'], weight_pounds: rand(175..290))}
     i = i + 1
 end
 
-i = 26
-
-5.times do 
-    url = "https://www.balldontlie.io/api/v1/players/?page=#{i}"
-    response = RestClient.get(url)
-    player_data = JSON.parse(response)
-    # puts(player_data)
-    player_data['data'].each { |player| Player.create(team_id: Team.all.sample.id, first_name: player['first_name'], last_name: player['last_name'], position: player['position'], weight_pounds: player['weight_pounds'])}
-    i = i + 1
-end
-
-i = 31
+i = 27
 
 5.times do 
     url = "https://www.balldontlie.io/api/v1/players/?page=#{i}"
     response = RestClient.get(url)
     player_data = JSON.parse(response)
     # puts(player_data)
-    player_data['data'].each { |player| Player.create(team_id: Team.all.sample.id, first_name: player['first_name'], last_name: player['last_name'], position: player['position'], weight_pounds: player['weight_pounds'])}
+    player_data['data'].each { |player| Player.create(ppg: rand(1.0..35.0), apg: rand(1.0..13.0), rpg: rand(1.0..14.0), spg: rand(0.5..3.0), tpg: rand(0.5..4.5), fpg: rand(1.0..5.5), mpg: rand(5.0..42.0), jersey_number: rand(1..50), years_pro: rand(1..19), nationality: Faker::Nation.nationality, team_id: Team.all.sample.id, university: Faker::University.name, first_name: player['first_name'], last_name: player['last_name'], position: player['position'], weight_pounds: rand(175..290))}
     i = i + 1
 end
+
+i = 32
+
+5.times do 
+    url = "https://www.balldontlie.io/api/v1/players/?page=#{i}"
+    response = RestClient.get(url)
+    player_data = JSON.parse(response)
+    # puts(player_data)
+    player_data['data'].each { |player| Player.create(ppg: rand(1.0..35.0), apg: rand(1.0..13.0), rpg: rand(1.0..14.0), spg: rand(0.5..3.0), tpg: rand(0.5..4.5), fpg: rand(1.0..5.5), mpg: rand(5.0..42.0), jersey_number: rand(1..50), years_pro: rand(1..19), nationality: Faker::Nation.nationality, team_id: Team.all.sample.id, university: Faker::University.name, first_name: player['first_name'], last_name: player['last_name'], position: player['position'], weight_pounds: rand(175..290))}
+    i = i + 1
+end
+
+i = 37
+
+5.times do 
+    url = "https://www.balldontlie.io/api/v1/players/?page=#{i}"
+    response = RestClient.get(url)
+    player_data = JSON.parse(response)
+    # puts(player_data)
+    player_data['data'].each { |player| Player.create(ppg: rand(1.0..35.0), apg: rand(1.0..13.0), rpg: rand(1.0..14.0), spg: rand(0.5..3.0), tpg: rand(0.5..4.5), fpg: rand(1.0..5.5), mpg: rand(5.0..42.0), jersey_number: rand(1..50), years_pro: rand(1..19), nationality: Faker::Nation.nationality, team_id: Team.all.sample.id, university: Faker::University.name, first_name: player['first_name'], last_name: player['last_name'], position: player['position'], weight_pounds: rand(175..290))}
+    i = i + 1
+end
+
+i = 42
+
+5.times do 
+    url = "https://www.balldontlie.io/api/v1/players/?page=#{i}"
+    response = RestClient.get(url)
+    player_data = JSON.parse(response)
+    # puts(player_data)
+    player_data['data'].each { |player| Player.create(ppg: rand(1.0..35.0), apg: rand(1.0..13.0), rpg: rand(1.0..14.0), spg: rand(0.5..3.0), tpg: rand(0.5..4.5), fpg: rand(1.0..5.5), mpg: rand(5.0..42.0), jersey_number: rand(1..50), years_pro: rand(1..19), nationality: Faker::Nation.nationality, team_id: Team.all.sample.id, university: Faker::University.name, first_name: player['first_name'], last_name: player['last_name'], position: player['position'], weight_pounds: rand(175..290))}
+    i = i + 1
+end
+
+i = 47
+
+5.times do 
+    url = "https://www.balldontlie.io/api/v1/players/?page=#{i}"
+    response = RestClient.get(url)
+    player_data = JSON.parse(response)
+    # puts(player_data)
+    player_data['data'].each { |player| Player.create(ppg: rand(1.0..35.0), apg: rand(1.0..13.0), rpg: rand(1.0..14.0), spg: rand(0.5..3.0), tpg: rand(0.5..4.5), fpg: rand(1.0..5.5), mpg: rand(5.0..42.0), jersey_number: rand(1..50), years_pro: rand(1..19), nationality: Faker::Nation.nationality, team_id: Team.all.sample.id, university: Faker::University.name, first_name: player['first_name'], last_name: player['last_name'], position: player['position'], weight_pounds: rand(175..290))}
+    i = i + 1
+end
+
+
 
 
