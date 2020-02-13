@@ -1,7 +1,10 @@
 class SessionsController < ApplicationController
 
   def new
+    # byebug
+    return head(:forbidden) unless logged_in? == false
     @user = User.new
+    # byebug
   end
 
   def create
@@ -11,7 +14,6 @@ class SessionsController < ApplicationController
        redirect_to user_path(@user)
     else
       return head(:forbidden)
-      # render login_path
     end
   end
 

@@ -1,21 +1,18 @@
 
+
 <body style="background-color:powderblue;">
 
 <h1 style="font-family:verdana; font-size:300%; text-align:center">Life's Too Sport!</h1>
 
 <img src='https://previews.123rf.com/images/chromaco/chromaco1109/chromaco110900021/10537816-basketball-hoop-with-basketball-cartoon.jpg' height= 250, width= 350>
 <img src='https://sportshub.cbsistatic.com/i/r/2019/09/26/f81faf11-54b5-4c2f-9d7f-d129b9e45803/thumbnail/640x360/9848805b319ccb9c8891ee149e020ce7/college-football-general.jpg' height = 250, width= 400>
-<img src='https://lh3.googleusercontent.com/proxy/ZcYsQRCuZGUd5Urp-PXfmLBKM8HUtLAP73YC69nDOv93AIZoQpzOFBMVc-HczrI2WdUC-hoxp0BFFTCA7jPa1SBCvt7xMMhivo0VnvpcBBkR6mw' height= 250, width= 400>
+<img src='https://g.foolcdn.com/image/?url=https%3A%2F%2Fg.foolcdn.com%2Feditorial%2Fimages%2F550728%2Fa-baseball-in-a-glove-and-a-baseball-bat-lying-on-grass.jpg&w=700&op=resize' height = 250, width= 400>
 
-<ul>
+
+
 <% @sports.uniq.each do |sport| %>
-<li><%= button_to sport.name, sport_path(sport), method: :get %></li>
+<%= button_to sport.name, sport_path(sport), method: :get %>
 <% end %>
-</ul>
-
-<p> <%= link_to 'User Login', login_path(controller: 'sessions', action: 'new') %></p><br>
-
-<p> <%= link_to 'Create Account', new_user_path(controller: 'user', action: 'new') %></p>
 
 </body>
 

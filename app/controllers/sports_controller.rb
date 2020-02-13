@@ -6,7 +6,11 @@ class SportsController < ApplicationController
     end
 
     def show
-        @sport = Sport.find(params[:id])
+        if logged_in?
+            @sport = Sport.find(params[:id])
+        else
+            redirect_to '/'
+        end
     end
 
 

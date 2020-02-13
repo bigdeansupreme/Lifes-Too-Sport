@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-
+    helper_method :logged_in?, :current_user
 
     def user_log_in(user_id)
         session[:user_id] = user_id
@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
     def current_user
         if logged_in?
-            User.find(session[:user_id])
+            @user = User.find(session[:user_id])
         else
             render '/'
         end

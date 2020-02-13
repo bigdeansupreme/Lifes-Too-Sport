@@ -6,9 +6,10 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
 
-  resources :teams, except: [:index]
-  resources :players, except: [:index]
-  resources :sports
-  resources :users
+  resources :teams, only: [:show]
+  resources :players, only: [:show, :index]
+  resources :sports, only: [:index, :show]
+  resources :users, except: [:index]
+  resources :favorites
 
 end

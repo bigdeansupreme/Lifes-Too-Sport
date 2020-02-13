@@ -10,6 +10,23 @@
   </head>
 
   <body>
+  <style>
+
+</style>
+<div id='header'>
+<ul>
+  <li><%= link_to 'Homepage', '/', method: :get %></li>
+  <% if !logged_in? %>
+  <li><%= link_to 'User Login', login_path %></li>
+  <li><%= link_to 'Create Account', new_user_path(controller: 'user', action: 'new') %></li>
+  <% else %>
+  <li><%= link_to 'Logout', logout_path, method: :post %></li>
+  <li><%= link_to 'Edit Profile', edit_user_path(current_user), method: :get %></li>
+  <li><%= link_to 'Profile Page', user_path(current_user), method: :get %></li>
+  <li><%= link_to 'Delete Account', user_path(current_user), method: :delete  %></li>
+  <% end %>
+</ul>
+</div>
     <%= yield %>
   </body>
 </html>
