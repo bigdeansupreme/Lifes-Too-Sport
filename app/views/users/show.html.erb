@@ -7,4 +7,60 @@
 <h3>Bio:</h3>
 <p><%= @user.bio %></p><br><br><br>
 
+<% if !@user.favorites.empty? %>
+<h1>Favorited Players:</h1>
+<% else %>
+<h1>No Favorited Players</h2>
+<% end %>
+<hr/>
+<% if @user.players %>
+<% @user.players.each do |player| %>
+<h2 style='text-align: center'><%= player.full_name %> <%= player.position %> - <%= player.team.full_name %></h2>
+<h3>Career Stat Averages:</h3>
+
+<% @fav = @user.favorites.find_by(player_id: player.id) %>
+<%= button_to 'Unfavorite', favorite_path(@fav), method: :delete %>
+
+
+
+
+
+
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+}
+th {
+  text-align: left;
+}
+</style>
+
+    <table style="width:80%">
+        <tr>
+            <th>Points per game</th>
+            <th>Assists per game</th>
+            <th>Rebounds per game</th>
+            <th>Steals per game</th>
+            <th>Turnovers per game</th>
+            <th>Fouls per game</th>
+            <th>Minutes per game</th>
+        </tr>
+        <tr>
+            <td><%= player.ppg.round(2) %></td>
+            <td><%= player.apg.round(2) %></td>
+            <td><%= player.rpg.round(2) %></td>
+            <td><%= player.spg.round(2) %></td>
+            <td><%= player.tpg.round(2) %></td>
+            <td><%= player.fpg.round(2) %></td>
+            <td><%= player.mpg.round(2) %></td>
+            </tr>    
+    </table>
+<hr/>
+<% end  %>
+<% end %>
+
 
