@@ -1,11 +1,15 @@
 <h1><%= @sport.name %></h1>
 
+<div class="background_image">
+<%= image_tag(@sport.background_image) %>
+</div>
+
 <ul>
 <% @sport.teams.each do |team| %>
  <li><%= link_to team.full_name, team_path(team) %></li>
  <% end %>
  </ul>
 
- 
+
 
 

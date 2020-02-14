@@ -6,6 +6,14 @@
 <p>Weight: <%= @player.weight_pounds %> Lbs</p><br>
 <p>Nationality: <%= @player.nationality %></p><br>
 <p>College: <%= @player.university %></p>
+<% @fav = @user.favorites.find_by(player_id: @player.id)   %>
+<% if @fav %>
+<%= button_to 'Unfavorite', favorite_path(@fav), method: :delete %>
+<% else %>
+<%= button_to 'Favorite', new_favorite_path(@player) %>
+<% end %>
+
+
 
 
 <h3>Career Stat Averages:</h3>

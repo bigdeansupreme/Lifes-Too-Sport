@@ -11,9 +11,9 @@ require 'rest-client'
 require 'json'
 require 'faker'
 
-nba = Sport.create(name: 'NBA')
-nfl = Sport.create(name: 'NFL')
-mlb = Sport.create(name: 'MLB')
+nba = Sport.create(name: 'NBA', background_image:"top-view-photo-of-basketball-court-2291004.jpg")
+nfl = Sport.create(name: 'NFL', background_image:"adult-american-football-athlete-audience-209954.jpg")
+mlb = Sport.create(name: 'MLB', background_image:"lights-night-crowd-stadium-89699.jpg")
 
 
 url_2 = "https://www.balldontlie.io/api/v1/teams"

@@ -1,3 +1,19 @@
 // Place all the styles related to the Sports controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+body.sports {
+  background-image: url(field-stadium-soccer-argentina-61135.jpg);
+  background-attachment: fixed;  
+  background-size: cover;
+}
+
+.background_image img {
+  display: block;
+    max-width:230px;
+    max-height:180px;
+    width: auto;
+    height: auto;
+    background-repeat: repeat-y
+}

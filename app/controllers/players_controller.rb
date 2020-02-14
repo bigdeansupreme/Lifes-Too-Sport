@@ -1,11 +1,13 @@
 class PlayersController < ApplicationController
 
     def index
+        current_user
         @players = Player.search(params[:search])
     end
 
 
     def show
+        current_user
         @player = Player.find(params[:id])
     end
 

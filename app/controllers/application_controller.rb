@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
         if logged_in?
             @user = User.find(session[:user_id])
         else
-            render '/'
+            redirect_to '/'
         end
     end
 

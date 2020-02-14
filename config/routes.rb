@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   post '/logout', to: 'sessions#destroy'
+  post '/favorites/:id', to: 'favorites#create', as: 'new_favorite'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
 
@@ -10,6 +11,6 @@ Rails.application.routes.draw do
   resources :players, only: [:show, :index]
   resources :sports, only: [:index, :show]
   resources :users, except: [:index]
-  resources :favorites
+  resources :favorites, only: [:destroy]
 
 end
