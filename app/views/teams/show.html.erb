@@ -1,13 +1,17 @@
-<h1><%= @team.full_name %></h1>
-<p>Abbr: <%= @team.abbreviation %></p>
-<p>City: <%= @team.city %><br>
+<div class='team'>
 
-<h3>Conference: <%= @team.conference %></h3>
-<p>Division: <%= @team.division %></p>
+<h1 class='white'><%= @team.full_name %></h1>
+<p class='white'>Abbr: <%= @team.abbreviation %></p>
+<p class='white'>City: <%= @team.city %><br>
+
+<h3 class='white'>Conference: <%= @team.conference %></h3>
+<p class='white'>Division: <%= @team.division %></p>
 
 
-<ul>
+<ul class='teams'>
 <% @team.players.each do |player| %>
 <li><%= link_to player.full_name, player_path(player) %></li>
 <% end %>
 </ul>
+
+</div>

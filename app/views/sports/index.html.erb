@@ -6,12 +6,29 @@
 
 <body class="sports">    
 
-<h1 style="font-family:verdana; color:coral; font-size:300%; text-align:center">Life's Too Sport!</h1>
+<h1 style="font-family:verdana; color:coral; font-size:300%; text-align:center">#Life'sTooSport!</h1>
 
-
+<div class='logo'>
 <% @sports.uniq.each do |sport| %>
-<%= button_to sport.name, sport_path(sport), method: :get %>
+
+
+    <% if sport.name == 'NBA'  %>
+        <%= link_to image_tag("https://cdn.freebiesupply.com/images/large/2x/nba-logo-transparent.png",  size: "325"), sport_path(sport), method: :get %>
+    <% end%>
+    <% if sport.name == 'NFL'  %>
+        <%= link_to image_tag("https://cdn.freebiesupply.com/logos/large/2x/nfl-1-logo-png-transparent.png",  size: "325"), sport_path(sport), method: :get %>
+    <% end%>
+    <% if sport.name == 'MLB'  %>
+        <%= link_to image_tag("https://cdn.bleacherreport.net/images/team_logos/328x328/mlb_highlights.png",  size: "325"), sport_path(sport), method: :get %>
+    <% end%>
+        
+    <%# <% elsif sport.name == 'MLB'  %>
 <% end %>
+</div>
+
+
+
+
 
 </body>
 </html>
