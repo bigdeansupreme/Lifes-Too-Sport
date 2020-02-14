@@ -1,3 +1,13 @@
+<style>
+body {
+        background-image: url("https://images.pexels.com/photos/1939485/pexels-photo-1939485.jpeg?cs=srgb&dl=white-painted-wall-1939485.jpg&fm=jpg");
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat; 
+    }
+</style>
+
+
 <h2><%= @user.user_name %></h2>
 
 <div class="profile_image">
@@ -5,7 +15,7 @@
 </div>
 
 <h3>Bio:</h3>
-<p><%= @user.bio %></p><br><br><br>
+<h4><%= @user.bio %></h4><br><br><br>
 
 <% if !@user.favorites.empty? %>
 <h1>Favorited Players:</h1>
